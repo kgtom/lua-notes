@@ -77,6 +77,36 @@ end
 
 ### 5.流程控制
 if 、if else 语句
+~~~lua
+
+if(0)
+then 
+    print("0 为true")
+end
+
+~~~
+### 6.函数
+* 1.默认全局函数
+* 2.多返回值
+* 3.可变参数...(三点)，select("#",...) 来获取可变参数的数量
+
+~~~lua
+function max(num1, num2)
+
+        if (num1 > num2) then
+           result = num1;
+        else
+           result = num2;
+        end
+     
+        return result; 
+     end
+     -- 调用函数
+     print("两值比较最大值为 ",max(10,8))
+     print("两值比较最大值为 ",max(9,6))
+~~~
+
+### 7.
 
 
 >reference
