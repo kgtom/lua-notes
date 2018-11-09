@@ -106,8 +106,17 @@ function max(num1, num2)
      print("两值比较最大值为 ",max(9,6))
 ~~~
 
-### 7.
-
+### 7.字符串
+字符串或串(String)是由数字、字母、下划线组成的一串字符。
+### 1.定义字符串三种方式,双引号、单引号、[[]]。
+~~~lua
+str="lua"
+print("str:",str)
+str2='lua2'
+print("str2:",str2)
+str3=[[lua3]]
+print("str3:",str3)
+~~~
 
 >reference
 [runoob](https://www.runoob.com/lua/)
