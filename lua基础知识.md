@@ -118,5 +118,19 @@ str3=[[lua3]]
 print("str3:",str3)
 ~~~
 
+
+### 2.常用操作
+
+~~~
+--格式化字符串
+print(string.format( "value : %d",10 ))
+
+-- 反转
+print(string.reverse( "lua" ))
+
+~~~
+
+
+## 8.数组
 >reference
 [runoob](https://www.runoob.com/lua/)
