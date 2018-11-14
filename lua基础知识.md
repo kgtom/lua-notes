@@ -130,7 +130,36 @@ print(string.reverse( "lua" ))
 
 ~~~
 
-
 ## 8.数组
+Lua 数组的索引键值可以使用整数表示，数组的大小不是固定的。
+
+~~~
+--一维数组，索引默认从1开始，也可以指定0，没有值的返回nil
+array={"a","b"}
+for i=0,2 do
+    print("arr:",array[i])
+end
+~~~
+
+## 9.迭代器
+迭代器（iterator）是一种对象。
+~~~
+array = {"tom", "jerry"}
+
+for key,value in ipairs(array) 
+do
+   print(key, value)
+end
+~~~
+
+## 10.table
+table 是 Lua 的一种数据结构用来帮助我们创建不同的数据类型，如：数组、字典等。
+
+Lua table 使用关联型数组，你可以用任意类型的值来作数组的索引，但这个值不能是 nil。
+
+Lua table 是不固定大小的，你可以根据自己需要进行扩容。
+
+Lua也是通过table来解决模块（module）、包（package）和对象（Object）的。 例如string.format表示使用"format"来索引table string。
+
 >reference
 [runoob](https://www.runoob.com/lua/)
