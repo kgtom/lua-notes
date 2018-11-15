@@ -174,5 +174,11 @@ mytable = nil
 -- lua 垃圾回收会释放内存
 ~~~
 
+### 11.Lua 模块与包
+模块类似于一个封装库，从 Lua 5.1 开始，Lua 加入了标准的模块管理机制，可以把一些公用的代码放在一个文件里，以 API 接口的形式在其他地方调用，有利于代码的重用和降低代码耦合度。
+
+[详见](https://www.runoob.com/lua/lua-modules-packages.html)
+
+
 >reference
 [runoob](https://www.runoob.com/lua/)
