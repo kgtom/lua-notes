@@ -161,5 +161,18 @@ Lua table 是不固定大小的，你可以根据自己需要进行扩容。
 
 Lua也是通过table来解决模块（module）、包（package）和对象（Object）的。 例如string.format表示使用"format"来索引table string。
 
+
+~~~
+-- 初始化表
+mytable = {}
+
+-- 指定值
+mytable[1]= "Lua"
+
+-- 移除引用
+mytable = nil
+-- lua 垃圾回收会释放内存
+~~~
+
 >reference
 [runoob](https://www.runoob.com/lua/)
