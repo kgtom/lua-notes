@@ -191,5 +191,10 @@ require "<模块名>"
 [详见](https://www.runoob.com/lua/lua-modules-packages.html)
 
 
+### 12.协同程序(coroutine)
+Lua 协同程序(coroutine)与线程比较类似：拥有独立的堆栈，独立的局部变量，独立的指令指针，同时又与其它协同程序共享全局变量和其它大部分东西。
+
+协同是非常强大的功能，但是用起来也很复杂。
+
 >reference
 [runoob](https://www.runoob.com/lua/)
