@@ -24,7 +24,8 @@ OpenResty 的目标是让你的 Web 服务直接跑在 Nginx 服务内部,充分
 最佳的方案是提供一个lua的扩展，无缝集成到openresty中，这样可以完美地规避掉上述2个缺点。
 
 ### 2.如何使用golang 写lua插件
-
+* 类库：[lua2go](https://github.com/theganyo/lua2go)
+* 用到struct解析工具：[onlinetool](https://www.onlinetool.io/xmltogo/)
 
 
 >reference:
