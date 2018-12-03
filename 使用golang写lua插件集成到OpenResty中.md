@@ -16,6 +16,13 @@ OpenResty 的目标是让你的 Web 服务直接跑在 Nginx 服务内部,充分
 
 ### 1.golang 微服务与lua插件选择
 
+最初的方案打算用golang实现一个微服务，供openresty调用，该方案的特点是方便，能快速实现，但缺点也是非常明显的：
+
+* 性能损耗大：openresty每接收到一个请求都需要调用golang的restful api，然后等待golang把wbxml解析完并返回，这中间有非常大的性能损耗
+* 增加运维成本：golang微服务奔溃后，openresty将无法拿到想到的信息了，在运维时，除了要关注openresty本身外，还要时刻关注golang微服务的业务连续性、性能等指标
+
+最佳的方案是提供一个lua的扩展，无缝集成到openresty中，这样可以完美地规避掉上述2个缺点。
+
 ### 2.如何使用golang 写lua插件
 
 
