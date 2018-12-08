@@ -22,31 +22,31 @@
 
 ~~~lua
 --检查用户是否秒杀过该机票，如果~=0,则返回 0说明已秒杀
-local hasBuyKill=redis.call('sismember',KEYS[1],ARGV[1])       
-if hasBuyKill ~=0 then
-    return 0;
-end
+    local hasSecKill=redis.call('sismember',KEYS[1],ARGV[1])       
+    if hasSecKill ~=0 then
+        return 0;
+    end
 
  
 --检查机票库存,如果库存<购买的，表示库存不足，返回1,每个用户限购2张及2张以下，超过限购返回3
 
     local airStoreCount=tonumber(redis.call("get",ARGV[1]) or "0");
     local airBuyCount=tonumber(ARGV[2])
-    if airBuyCount>2 then{
+    if airBuyCount>2 then
         return 3
-    }
-    if airCount-airBuyCount<0 then
+    end 
+    if airStoreCount-airBuyCount<0 then
         return 2;
     end
 
 
---扣库存,每人限量至多张机票
+--扣库存,每人限量一张机票
 
     redis.call('DECRBY',ARGV[1],airBuyCount);
 
 
 -- 记录秒杀成功的用户
-redis.call('sadd',KEYS[1],ARGV[1]);
+    redis.call('sadd',KEYS[1],ARGV[1]);
 
 -- 返回1 秒杀成功
 return 1;
@@ -54,7 +54,7 @@ return 1;
 
 
 请求：
-* 1.预设库存机票id12的还有库存5张机票
+* 1.预设库存机 票id12的还有库存5张机票
 ~~~
 127.0.0.1:6379> set air_id:12 5
 OK
